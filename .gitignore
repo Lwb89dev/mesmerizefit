@@ -1,0 +1,36 @@
+# --- Credentials / secrets ---
+# Never commit auth keys, tokens, or anything matching these patterns.
+*.key
+auth*
+secrets*
+auth_key_device_info.json
+
+# --- Captures: screenshots, bugreports, raw BT logs, UI dumps ---
+# All treated as sensitive (owner's own device/phone data) — excluded wholesale.
+captures/
+
+# Raw capture-derived dumps (full MAC-laden packet/string dumps) — the
+# curated, redacted findings live in bluetooth/protocol.md instead.
+bluetooth/capture*_full.txt
+bluetooth/strings_cap*.txt
+
+# --- Third-party tools downloaded during research (not our code) ---
+scripts/platform-tools/
+scripts/tools/
+scripts/.venv/
+
+# --- Proprietary Huami/Zepp app binaries and derived decompiled code ---
+# Never redistribute: copyrighted APKs and decompiled output.
+zepp-apps/*.apk
+zepp-apps/decompiled/
+zepp-apps/jadx_log.txt
+zepp-apps/native-libs/lib/
+
+# --- Python / misc ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- OS noise ---
+.DS_Store
